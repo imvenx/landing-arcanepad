@@ -20,9 +20,9 @@ onMounted(() => {
   lines.forEach(line => {
     line.animate([
       { strokeDashoffset: '55' },
-      { strokeDashoffset: '-550000' }
+      { strokeDashoffset: '-5000' }
     ], {
-      duration: Math.random() * 150000000,
+      duration: 150000 + Math.random() * 100000,
       iterations: Infinity,
       easing: 'linear',
       fill: 'forwards'
@@ -47,7 +47,7 @@ onMounted(() => {
   right: 0;
   bottom: 0;
   /* filter: blur(15px); */
-  height: 100vh;
+  height: 100lvh;
   margin: auto;
   width: 100%;
 }

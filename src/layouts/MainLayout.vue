@@ -1,15 +1,17 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header style="  background: linear-gradient(120deg, rgb(0, 67, 67), rgb(67, 0, 67));    color: cyan;">
+    <q-header elevated style="background: linear-gradient(120deg, black, rgb(0, 67, 67), rgb(67, 0, 67)); color: cyan;">
       <q-toolbar>
-        <q-btn flat dense round outline icon="diamond" aria-label="Menu" @click="toggleLeftDrawer" />
+        <!-- <q-btn flat dense round outline icon="diamond" aria-label="Menu" @click="toggleLeftDrawer" /> -->
 
         <q-toolbar-title>
-          Arcanepad
+          <ArcanepadText />
+          <!-- Arcanepad -->
         </q-toolbar-title>
 
         <!-- <div>Quasar v{{ $q.version }}</div> -->
-        <q-btn flat dense round outline icon="" aria-label="Menu" @click="toggleLeftDrawer" />
+        <q-btn icon="face" round />
+        <!-- <q-btn flat dense round outline icon="" aria-label="Menu" @click="toggleLeftDrawer" /> -->
       </q-toolbar>
     </q-header>
 
@@ -31,7 +33,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue';
+import ArcanepadText from 'components/ArcanepadText.vue';
 
 const leftDrawerOpen = ref(false)
 
