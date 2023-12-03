@@ -10,7 +10,7 @@
         </q-toolbar-title>
 
         <!-- <div>Quasar v{{ $q.version }}</div> -->
-        <!-- <q-btn icon="face" round /> -->
+        <q-btn icon="face" round />
         <!-- <q-btn flat dense round outline icon="" aria-label="Menu" @click="toggleLeftDrawer" /> -->
       </q-toolbar>
     </q-header>

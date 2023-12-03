@@ -1,15 +1,14 @@
 <template>
   <q-page class="row justify-evenly" style="background-color: rgba(0, 0, 0, 0.7);">
     <div id="mainCont">
-      <br style="margin: 2px;">
+      <br>
       <div class="gradient-container">
-        <img src="/images/logo.png" alt="Logo" />
+        <q-img id="logoImg" src="/images/logo.png" alt="Logo" />
       </div>
 
       <div class="text-h5" style="font-family: 'Courier New', Courier, monospace; font-weight: 1000;">
         A new way of playing
       </div>
-      <hr style="width: 100%; margin-bottom: -20px" />
       <div>
         <div class="text-h4">Download</div>
         <span style="color: orange; font-weight: 800;">
@@ -34,7 +33,7 @@
       <br>
     </div>
 
-    <youtube-embed style="opacity: .7;" video-id="OpaYoftORnE" />
+    <youtube-embed style="opacity: .9; box-shadow: 0 0 50px white; margin-top: 5vh;" video-id="OpaYoftORnE" />
   </q-page>
 </template>
 
@@ -100,23 +99,27 @@ function tryDownload(downloadUrl: string, fileExtension: string) {
 
 .gradient-container {
   background: linear-gradient(120deg, cyan, fuchsia);
-  display: inline-block;
-  padding: 1em;
+  padding: .3em;
   border-radius: 1000px;
   box-shadow: 0px 0px 20px cyan;
+  width: 100%;
+  max-width: 60vw;
+  margin: auto;
 }
 
-.gradient-container img {
+#logoImg {
   display: block;
   border-radius: 1000px;
-  max-width: 100%;
 }
 
 #mainCont {
+  justify-content: center;
   display: grid;
   gap: 30px;
   width: 75%;
   max-width: 400px;
   text-align: center;
+  margin: auto;
+  height: 90svh;
 }
 </style>
