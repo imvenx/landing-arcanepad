@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated style="background: linear-gradient(120deg, black, rgb(0, 67, 67), rgb(67, 0, 67)); color: cyan;">
+    <q-header elevated style="background: linear-gradient(120deg, rgb(0, 20, 20, .9), rgb(20, 0, 20, .9)); color: cyan;">
       <q-toolbar>
         <!-- <q-btn flat dense round outline icon="diamond" aria-label="Menu" @click="toggleLeftDrawer" /> -->
 
@@ -10,7 +10,7 @@
         </q-toolbar-title>
 
         <!-- <div>Quasar v{{ $q.version }}</div> -->
-        <q-btn icon="face" round />
+        <!-- <q-btn icon="face" round /> -->
         <!-- <q-btn flat dense round outline icon="" aria-label="Menu" @click="toggleLeftDrawer" /> -->
       </q-toolbar>
     </q-header>

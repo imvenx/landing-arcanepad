@@ -1,1 +1,37 @@
 /* app global css */
+
+body {
+  animation: fadeIn 1s ease-in-out;
+}
+
+main {
+  animation: blurIn 2s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
+  /* font-family: 'Courier New', Courier, monospace; */
+  /* font-weight: 1000; */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blurIn {
+  from {
+    filter: blur(100px);
+  }
+
+  to {
+    filter: blur(0);
+  }
+}
+
+a {
+  font-weight: 1000;
+  color: cyan;
+  text-decoration: none;
+}

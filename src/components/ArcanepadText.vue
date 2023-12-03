@@ -24,6 +24,10 @@ path {
   animation: strokeAnim 8s forwards;
 }
 
+path:hover {
+  stroke: black !important;
+}
+
 .shadow {
   filter: blur(1px);
 }
