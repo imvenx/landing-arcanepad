@@ -20,56 +20,47 @@
         <div class="card">
           <div class="text-h6">Mobile</div>
           <q-icon style="margin: auto;" name="smartphone" size="xl" />
-          <q-btn style="color: cyan;" outline>Android</q-btn>
+          <q-btn style="color: cyan;" outline @click="tryDownload(androidDownloadUrl, '.apk')">Android</q-btn>
         </div>
         <div class="card">
           <div class="text-h6">Desktop</div>
           <q-icon style="margin: auto;" name="laptop" size="xl" />
           <div style="display: flex; gap: 5px;">
-            <q-btn style="color: cyan;" outline @click="downloadWindows">Windows</q-btn>
-
-            <a href="https://github.com/imvenx/arcanepad-releases/releases/latest" target="_blank"
-              style="font-weight: initial; text">
-              <q-btn style="color: cyan;" outline @click="downloadLinux">
-                Linux
-              </q-btn>
-            </a>
+            <q-btn style="color: cyan;" outline @click="tryDownload(windowsDownloadUrl, '.exe')">Windows</q-btn>
+            <q-btn style="color: cyan;" outline @click="tryDownload(linuxDownloadUrl, '.appimage')">Linux</q-btn>
           </div>
         </div>
       </div>
       <br>
     </div>
 
-    <youtube-embed video-id="OpaYoftORnE" />
+    <youtube-embed style="opacity: .7;" video-id="OpaYoftORnE" />
   </q-page>
 </template>
 
 <script setup lang="ts">
 import { useQuasar } from 'quasar';
 import YoutubeEmbed from 'src/components/YoutubeEmbed.vue';
-import { ref } from 'vue';
-
-const windowsDownloadUrl = ref('');
-const linuxDownloadUrl = ref('');
 
 const $q = useQuasar()
 
-function fetchDesktopReleaseAssets() {
+const baseUrl = 'https://api.github.com/repos/imvenx/'
+const windowsDownloadUrl = baseUrl + 'arcanepad-releases/releases/latest'
+const linuxDownloadUrl = baseUrl + 'arcanepad-releases-linux/releases/latest'
+const androidDownloadUrl = baseUrl + 'arcanepad-releases-android/releases/latest'
+
+function fetchDesktopReleaseAssets(url: string, fileExtension: string) {
   return new Promise((resolve, reject) => {
-    fetch('https://api.github.com/repos/imvenx/arcanepad-releases/releases/latest')
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         const assets = data.assets;
 
-        const exeAsset = assets.find((asset: any) => asset.name.endsWith('.exe') && !asset.name.includes('.blockmap'));
+        const exeAsset = assets.find((asset: any) => (asset.name as string).toLowerCase().endsWith(fileExtension.toLocaleLowerCase()));
         if (exeAsset) {
-          windowsDownloadUrl.value = exeAsset.browser_download_url;
+          triggerDownload(exeAsset.browser_download_url)
         }
 
-        const appImageAsset = assets.find((asset: any) => asset.name.endsWith('.AppImage'));
-        if (appImageAsset) {
-          linuxDownloadUrl.value = appImageAsset.browser_download_url;
-        }
         resolve('');
       })
       .catch(error => {
@@ -80,7 +71,7 @@ function fetchDesktopReleaseAssets() {
 }
 
 
-function downloadFile(url: string) {
+function triggerDownload(url: string) {
   const a = document.createElement('a');
   a.href = url;
   a.download = '';
@@ -89,40 +80,11 @@ function downloadFile(url: string) {
   document.body.removeChild(a);
 }
 
-function downloadWindows() {
-  if (!windowsDownloadUrl.value) {
-    fetchDesktopReleaseAssets().then(() => {
-      if (windowsDownloadUrl.value) {
-        downloadFile(windowsDownloadUrl.value);
-      }
-    });
-  } else {
-    downloadFile(windowsDownloadUrl.value);
-  }
+function tryDownload(downloadUrl: string, fileExtension: string) {
+  fetchDesktopReleaseAssets(downloadUrl, fileExtension).then(() => {
+  });
 }
 
-function downloadLinux() {
-  // if (!linuxDownloadUrl.value) {
-  //   fetchDesktopReleaseAssets().then(() => {
-  //     if (linuxDownloadUrl.value) {
-  //       downloadFile(linuxDownloadUrl.value);
-  //     }
-  //   });
-  // } else {
-  // downloadFile(linuxDownloadUrl.value);
-
-  // }
-
-  // if (!linuxDownloadUrl.value) {
-  //   $q.notify({
-  //     type: 'negative',
-  //     message: 'Download Error, <a href="https://discord.com/invite/6Pr9JBCGXy" target="_blank">contact us</a>, or try again later,' +
-  //       'You can try to download directly <a href="https://github.com/imvenx/arcanepad-releases/releases" target="_blank"> here </a>'
-  //     , html: true
-  //   })
-
-  // }
-}
 </script>
 
 <style scoped>
@@ -156,6 +118,5 @@ function downloadLinux() {
   width: 75%;
   max-width: 400px;
   text-align: center;
-  height: 94vh;
 }
 </style>
