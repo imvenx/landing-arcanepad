@@ -1,6 +1,6 @@
 <template>
-  <svg id="textCont" height="40px" version="1.1" viewBox="-15 0 100 15.53" xmlns="http://www.w3.org/2000/svg"
-    style="position: absolute; left:0; top: 5px;">
+  <svg id="textCont" height="30px" version="1.1" viewBox="-15 0 100 15.53" xmlns="http://www.w3.org/2000/svg"
+    style="position: absolute; left:0; top: 10px;">
 
     <g transform="translate(-63.237 -99.611)">
       <path class="shadow" transform="matrix(1.0696 0 0 1.0696 -427.46 -316.01)"
@@ -30,6 +30,10 @@ path:hover {
 
 .shadow {
   filter: blur(1px);
+}
+
+#textCont {
+  max-width: 40vw;
 }
 
 @keyframes strokeAnim {
