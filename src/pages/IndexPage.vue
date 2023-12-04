@@ -1,5 +1,5 @@
 <template>
-  <q-page class="row justify-evenly" style="background-color: rgba(0, 0, 0, 0.7);;">
+  <q-page class="row justify-evenly" style="background-color: rgba(0, 0, 0, 0.7);">
 
     <main-component />
 
