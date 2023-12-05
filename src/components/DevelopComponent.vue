@@ -1,9 +1,10 @@
 <template>
-  <div id="developCont" class="gradientCont">
+  <div id="developCont">
     <div class="text-h4" style="padding: 5px 0; font-weight: 1000;">
       Develop
     </div>
-    <p class="text-h6 text-justify" style="text-align: left;">Create incredible apps and games that use smartphones as
+    <p class="text-h6 text-justify gradientCont" style="text-align: left;">Create incredible apps and games that use
+      smartphones as
       controllers! Support for Godot, Unity and Web.
     </p>
     <a href="https://imvenx.github.io/arcanedocs/" target="_blank" class="text-center" id="startDevelopingText">Start
