@@ -1,5 +1,5 @@
 <template>
-  <div id="mainNav">
+  <div id="mainNav" class="fadeInAndEaseIn">
     <div style="font-weight: 1000; font-size: 1.2rem; color: cyan;">
       Arcanepad
     </div>
@@ -33,7 +33,7 @@
     </q-drawer> -->
 
   <!-- <q-page-container> -->
-  <div style="padding-top: 3rem;">
+  <div style="padding-top: 3rem;" class="fadeInAndEaseIn">
     <router-view />
   </div>
   <!-- </q-page-container>

@@ -4,10 +4,12 @@
   animation: fadeIn 1s ease-in-out;
 } */
 
-#appCont {
+/* #appCont {
   animation: blurIn 2s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
-  /* font-family: 'Courier New', Courier, monospace; */
-  /* font-weight: 1000; */
+} */
+
+.fadeInAndEaseIn {
+  animation: blurIn 2s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
 }
 
 @keyframes fadeIn {

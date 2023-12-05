@@ -7,9 +7,7 @@
     <line x1="1220" y1="0" x2="5555" y2="9999" stroke="darkgray" stroke-width="200px"
       stroke-dasharray="100 50 10 30 50" />
   </svg> -->
-  <div id="appCont">
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <script setup lang="ts">
