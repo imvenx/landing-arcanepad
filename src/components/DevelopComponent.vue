@@ -1,6 +1,6 @@
 <template>
-  <div id="developCont">
-    <div class="text-h4" style="padding: 5px 0;">
+  <div id="developCont" class="gradientCont">
+    <div class="text-h4" style="padding: 5px 0; font-weight: 1000;">
       Develop
     </div>
     <p class="text-h6 text-justify" style="text-align: left;">Create incredible apps and games that use smartphones as

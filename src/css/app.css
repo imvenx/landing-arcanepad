@@ -42,3 +42,24 @@ a {
     linear-gradient(to right, rgb(32, 32, 32) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(32, 32, 32) 1px, transparent 1px);
 }
+
+/* Portrait orientation */
+@media screen and (max-aspect-ratio: 1/1) {
+  .hideOnPortrait {
+    display: none;
+  }
+}
+
+/* Landscape orientation */
+@media screen and (min-aspect-ratio: 1/1) {
+  .hideOnLandscape {
+    display: none;
+  }
+}
+
+.gradientCont {
+  background: linear-gradient(100deg, rgb(0, 255, 255), fuchsia) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}

@@ -1,6 +1,6 @@
 <template>
   <div id="mainNav">
-    <div style="font-weight: 1000; font-size: 1.2rem; color: cyan;">
+    <div style="font-weight: 1000; font-size: 1.2rem;" class="gradientCont">
       Arcanepad
     </div>
     <div class="row q-gutter-sm" style="margin-left: auto;">
