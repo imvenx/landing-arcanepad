@@ -6,7 +6,7 @@
 
     <!-- <develop-component /> -->
 
-    <youtube-embed style="opacity: .9; box-shadow: 0 0 50px white;" video-id="OpaYoftORnE" />
+    <youtube-embed style="box-shadow: 0 0 150px white;" video-id="OpaYoftORnE" />
   </div>
 
   <!-- </q-page> -->
