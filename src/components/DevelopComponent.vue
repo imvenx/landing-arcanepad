@@ -1,33 +1,28 @@
 <template>
   <div id="developCont">
-    <div>
-      <hr>
-      <div class="text-h4">
-        Develop
-      </div>
-      <hr>
-
-      <p class="text-h6 text-justify text-hyphens">Arcanepad is a multi-screen app store. Also is an
-        SDK (software development kit) with support for Godot, Unity and Web. Create incredible apps and games that use
-        smartphones a controllers!
-      </p>
-      <a href="https://imvenx.github.io/arcanedocs/" target="_blank" class="text-center" id="startDevelopingText">Start
-        Developing!</a>
+    <div class="text-h4" style="padding: 5px 0;">
+      Develop
     </div>
-    <br>
-    <br>
-    <q-img style="box-shadow: 0 0 10px white; border-radius: 10px;" src="/images/phone-hologram-1.png" />
-    <br>
-    <br>
+    <p class="text-h6 text-justify" style="text-align: left;">Create incredible apps and games that use smartphones as
+      controllers! Support for Godot, Unity and Web.
+    </p>
+    <a href="https://imvenx.github.io/arcanedocs/" target="_blank" class="text-center" id="startDevelopingText">Start
+      Developing!</a>
   </div>
+  <!-- <div style="border: 1px solid red; vertical-align: middle;">
+      <q-img style="margin: auto; box-shadow: 0 0 10px white; border-radius: 10px;" src="/images/phone-hologram-1.png" />
+    </div> -->
 </template>
 
 <style scoped>
 #developCont {
+  /* padding: 5%; */
   text-align: center;
-  margin: 0 10%;
-  max-width: 400px;
-  height: 90dvh;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
 }
 
 #startDevelopingText {

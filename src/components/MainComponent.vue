@@ -1,39 +1,49 @@
 <template>
   <div id="mainCont">
-    <br>
-    <div class="gradient-container">
-      <q-img id="logoImg" src="/images/logo.png" alt="Logo" />
-    </div>
-
-    <div class="text-h5" style="font-family: 'Courier New', Courier, monospace; font-weight: 1000;">
-      A new way of playing
-    </div>
-    <div>
-      <div class="text-h4">Download</div>
-      <span style="color: orange; font-weight: 800;">
-        Early Access Alpha Test
-      </span>
-    </div>
-    <div style="display: grid; grid-template-columns: 35% 60%; gap: 5%;">
-      <div class="card">
-        <div class="text-h6">Mobile</div>
-        <q-icon style="margin: auto;" name="smartphone" size="xl" />
-        <q-btn style="color: cyan;" outline @click="tryDownload(androidDownloadUrl, '.apk')">Android</q-btn>
+    <div style="display: grid; gap: 2rem;">
+      <div class="logoCont">
+        <q-img id="logoImg" src="/images/logo.png" alt="Logo" />
       </div>
-      <div class="card">
-        <div class="text-h6">Desktop</div>
-        <q-icon style="margin: auto;" name="laptop" size="xl" />
-        <div style="display: flex; gap: 5px;">
-          <q-btn style="color: cyan;" outline @click="tryDownload(windowsDownloadUrl, '.exe')">Windows</q-btn>
-          <q-btn style="color: cyan;" outline @click="tryDownload(linuxDownloadUrl, '.appimage')">Linux</q-btn>
+
+      <div>
+        <div class="text-h2" style="font-weight: 800; color: cyan;">Arcanepad</div>
+        <div class="text-h5" style="font-family: 'Courier New', Courier, monospace; font-weight: 1000;">
+          A new way of playing
         </div>
       </div>
+    </div>
+    <div id="downloadCont">
+      <div>
+        <div class="text-h4" style="margin-top: .5em;">Download</div>
+        <span style="color: orange; font-weight: 800;">
+          Early Access Alpha Test
+        </span>
+      </div>
+      <div style="display: grid; grid-template-columns:43% 55%; gap:2%; width: 100%;">
+        <div class="card">
+          <div class="text-h6">Mobile</div>
+          <q-icon style="margin: auto;" name="smartphone" size="xl" />
+          <q-btn style="color: cyan;" outline @click="tryDownload(androidDownloadUrl, '.apk')">Android</q-btn>
+        </div>
+        <div class="card">
+          <div class="text-h6">Desktop</div>
+          <q-icon style="margin: auto;" name="laptop" size="xl" />
+          <div style="display: flex; gap: 5px;">
+            <q-btn style="color: cyan;" outline @click="tryDownload(windowsDownloadUrl, '.exe')">Windows</q-btn>
+            <q-btn style="color: cyan;" outline @click="tryDownload(linuxDownloadUrl, '.appimage')">Linux</q-btn>
+          </div>
+        </div>
+      </div>
+      <hr style="border: 1px solid gray; width: 100%;">
+      <develop-component />
     </div>
     <br>
   </div>
 </template>
 
 <script lang="ts" setup>
+import DevelopComponent from './DevelopComponent.vue';
+
 
 const baseUrl = 'https://api.github.com/repos/imvenx/'
 const windowsDownloadUrl = baseUrl + 'arcanepad-releases/releases/latest'
@@ -87,12 +97,23 @@ function tryDownload(downloadUrl: string, fileExtension: string) {
   gap: 5px;
 }
 
-.gradient-container {
+.logoCont {
   background: linear-gradient(120deg, cyan, fuchsia);
   padding: .3em;
   border-radius: 1000px;
-  box-shadow: 0px 0px 20px cyan;
+  box-shadow: 0px 0px 30px cyan;
   width: 100%;
+  margin: auto;
+  max-width: 400px;
+  width: 70vw;
+}
+
+#downloadCont {
+  display: grid;
+  gap: 2em;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 500px;
   margin: auto;
 }
 
@@ -104,9 +125,17 @@ function tryDownload(downloadUrl: string, fileExtension: string) {
 #mainCont {
   justify-content: center;
   display: grid;
-  gap: 30px;
   text-align: center;
+  padding: 2rem;
+  max-width: 1400px;
   margin: auto;
-  height: 90svh;
+  min-height: 100svh;
+  align-items: center;
+}
+
+@media screen and (min-aspect-ratio: 1/1) {
+  #mainCont {
+    grid-template-columns: 50% 50%;
+  }
 }
 </style>

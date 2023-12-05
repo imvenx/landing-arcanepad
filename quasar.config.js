@@ -80,15 +80,13 @@ module.exports = configure(function (/* ctx */) {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
     devServer: {
-      // https: true
+      // https: true,
       open: true // opens browser window automatically
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
-      config: {
-        dark: true
-      },
+      config: { dark: true },
 
       iconSet: 'fontawesome-v5', // Quasar icon set
       // lang: 'en-US', // Quasar language pack

@@ -1,10 +1,10 @@
 /* app global css */
 
-body {
+/* body {
   animation: fadeIn 1s ease-in-out;
-}
+} */
 
-main {
+#appCont {
   animation: blurIn 2s ease-in-out forwards, fadeIn 2s ease-in-out forwards;
   /* font-family: 'Courier New', Courier, monospace; */
   /* font-weight: 1000; */
@@ -34,4 +34,11 @@ a {
   font-weight: 1000;
   text-decoration: none;
   color: cyan;
+}
+
+.gridBg {
+  background-size: 10px 10px;
+  background-image:
+    linear-gradient(to right, rgb(32, 32, 32) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(32, 32, 32) 1px, transparent 1px);
 }

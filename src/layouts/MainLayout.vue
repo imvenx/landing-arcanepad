@@ -1,34 +1,28 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <div id="mainNav">
+    <div style="font-weight: 1000; font-size: 1.2rem; color: cyan;">
+      Arcanepad
+    </div>
+    <div class="row q-gutter-sm" style="margin-left: auto;">
+      <q-btn icon="fab fa-discord" flat round color="blue" outline class="col" @click="openUrlInNewTab(discordUrl)" />
+      <q-btn icon="fab fa-twitter" flat round color="cyan" outline class="col" @click="openUrlInNewTab(twitterUrl)" />
+      <q-btn icon="fab fa-youtube" flat round color="red-5" outline class="col" @click="openUrlInNewTab(youtubeUrl)" />
+      <q-btn icon="fab fa-mastodon" flat round color="indigo-7" outline class="col"
+        @click="openUrlInNewTab(mastodonUrl)" />
+      <q-btn icon="fab fa-tiktok" flat round color="deep-purple-9" outline class="col"
+        @click="openUrlInNewTab(tiktokUrl)" />
+    </div>
+  </div>
+  <!-- <q-layout view="lHh Lpr lFf">
     <q-header elevated style="background: linear-gradient(120deg, rgb(0, 20, 20, .9), rgb(20, 0, 20, .9)); ">
       <q-toolbar>
-        <!-- <q-btn flat dense round outline icon="diamond" aria-label="Menu" @click="toggleLeftDrawer" /> -->
-
         <q-toolbar-title>
-          <ArcanepadText />
-          <!-- Arcanepad -->
         </q-toolbar-title>
 
-        <!-- <div>Quasar v{{ $q.version }}</div> -->
-        <div class="row q-gutter-sm">
-          <q-btn icon="fab fa-discord" round flat color="blue" outline class="col" @click="openUrlInNewTab(discordUrl)" />
-          <q-btn icon="fab fa-twitter" round flat color="cyan" outline class="col" @click="openUrlInNewTab(twitterUrl)" />
-          <q-btn icon="fab fa-youtube" round flat color="red-5" outline class="col"
-            @click="openUrlInNewTab(youtubeUrl)" />
-          <q-btn icon="fab fa-mastodon" round flat color="indigo-7" outline class="col"
-            @click="openUrlInNewTab(mastodonUrl)" />
-          <!-- <q-btn icon="fab fa-instagram" round flat color="pink-5" outline class="col"
-            @click="openUrlInNewTab(instagramUrl)" /> -->
-          <q-btn icon="fab fa-tiktok" round flat color="deep-purple-9" outline class="col"
-            @click="openUrlInNewTab(tiktokUrl)" />
-        </div>
-
-
-        <!-- <q-btn flat dense round outline icon="" aria-label="Menu" @click="toggleLeftDrawer" /> -->
       </q-toolbar>
-    </q-header>
+    </q-header> -->
 
-    <!-- <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+  <!-- <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
         <q-item-label header>
           Essential Links
@@ -38,10 +32,12 @@
       </q-list>
     </q-drawer> -->
 
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+  <!-- <q-page-container> -->
+  <div style="padding-top: 3rem;">
+    <router-view />
+  </div>
+  <!-- </q-page-container>
+  </q-layout> -->
 </template>
 
 <script setup lang="ts">
@@ -76,5 +72,17 @@ function toggleLeftDrawer() {
     padding: 4px 8px;
     /* Reduce padding */
   }
+}
+
+#mainNav {
+  padding: 1em;
+  background: linear-gradient(300deg, rgba(59, 0, 48, 0.6), rgba(0, 0, 0, .2), rgba(0, 79, 79, 0.6));
+  box-shadow: 0 1px 10px black;
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
 }
 </style>
