@@ -31,10 +31,10 @@
   border: 1px solid cyan;
   padding: .5rem;
   border-radius: 5px;
-  transition: .5s all;
+  transition: .3s all;
 }
 
 #startDevelopingText:hover {
-  background-color: rgba(0, 255, 255, 0.4);
+  background-color: rgba(0, 255, 255, 0.1);
 }
 </style>
