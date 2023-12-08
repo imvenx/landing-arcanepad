@@ -48,14 +48,14 @@ a {
 /* Portrait orientation */
 @media screen and (max-aspect-ratio: 1/1) {
   .hideOnPortrait {
-    display: none;
+    display: none !important;
   }
 }
 
 /* Landscape orientation */
 @media screen and (min-aspect-ratio: 1/1) {
   .hideOnLandscape {
-    display: none;
+    display: none !important;
   }
 }
 
