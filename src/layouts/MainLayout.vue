@@ -37,8 +37,8 @@
     <router-view />
   </div>
 
-  <q-btn class="hideOnPortrait fadeInAndEaseIn" :icon="scrollPosition > 50 ? 'arrow_upward' : 'arrow_downward'"
-    @click="scrollPosition > 50 ? scrollTop() : scrollBottom()" size="lg"
+  <q-btn class="hideOnPortrait fadeInAndEaseIn" :icon="'arrow_downward'" @click="scrollBottom()" size="lg"
+    :style="`display: ${scrollPosition > 50 ? 'none' : 'block'}`"
     style="margin: auto; width: 100%; position: fixed; bottom: 0;"></q-btn>
 
 
