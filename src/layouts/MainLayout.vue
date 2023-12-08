@@ -36,13 +36,20 @@
   <div style="padding-top: 3rem;" class="fadeInAndEaseIn">
     <router-view />
   </div>
+
+  <q-btn class="hideOnPortrait fadeInAndEaseIn" :icon="scrollPosition > 50 ? 'arrow_upward' : 'arrow_downward'"
+    @click="scrollPosition > 50 ? scrollTop() : scrollBottom()" size="lg"
+    style="margin: auto; width: 100%; position: fixed; bottom: 0;"></q-btn>
+
+
   <!-- </q-page-container>
   </q-layout> -->
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import ArcanepadText from 'components/ArcanepadText.vue';
+import ScrollButton from 'src/components/ScrollButton.vue';
 
 const leftDrawerOpen = ref(false)
 
@@ -56,6 +63,30 @@ const youtubeUrl = 'https://www.youtube.com/@Arcanepad'
 function openUrlInNewTab(url: string) {
   window.open(url)
 }
+
+const scrollPosition = ref(0);
+
+const updateScroll = () => {
+  const scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  scrollPosition.value = (scrolled / height) * 100;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', updateScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', updateScroll);
+});
+
+const scrollBottom = () => {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+};
+
+const scrollTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value
