@@ -6,7 +6,7 @@
 
     <!-- <develop-component /> -->
 
-    <youtube-embed style="box-shadow: 0 0 150px white;" video-id="OpaYoftORnE" />
+    <youtube-embed video-id="OpaYoftORnE" />
   </div>
 
   <!-- </q-page> -->
