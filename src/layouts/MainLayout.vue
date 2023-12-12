@@ -39,7 +39,7 @@
 
   <q-btn class="hideOnPortrait fadeInAndEaseIn" :icon="'arrow_downward'" @click="scrollBottom()" size="lg"
     :style="`display: ${scrollPosition > 50 ? 'none' : 'block'}`"
-    style="margin: auto; width: 100%; position: fixed; bottom: 0;"></q-btn>
+    style="margin: auto; width: 100%; position: fixed; bottom: 0; color:cyan"></q-btn>
 
 
   <!-- </q-page-container>
