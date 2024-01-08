@@ -3,7 +3,7 @@
     <main-component />
 
     <!-- <youtube-embed video-id="OpaYoftORnE" /> -->
-    <youtube-embed video-id="-B9HoCHmcl8" />
+    <youtube-embed video-id="KQo0WX6sOho" />
 
   </div>
 </template>
