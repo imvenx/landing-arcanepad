@@ -7,6 +7,9 @@
       <q-btn icon="fab fa-discord" flat round color="blue" outline class="col" @click="openUrlInNewTab(discordUrl)" />
       <q-btn icon="fab fa-twitter" flat round color="cyan" outline class="col" @click="openUrlInNewTab(twitterUrl)" />
       <q-btn icon="fab fa-youtube" flat round color="red-5" outline class="col" @click="openUrlInNewTab(youtubeUrl)" />
+      <q-btn icon="fab fa-instagram" flat round color="purple" outline class="col"
+        @click="openUrlInNewTab(instagramUrl)" />
+      <q-btn icon="fab fa-reddit" flat round color="orange" outline class="col" @click="openUrlInNewTab(redditUrl)" />
       <q-btn icon="fab fa-mastodon" flat round color="indigo-7" outline class="col"
         @click="openUrlInNewTab(mastodonUrl)" />
       <q-btn icon="fab fa-tiktok" flat round color="deep-purple-9" outline class="col"
@@ -56,6 +59,7 @@ const leftDrawerOpen = ref(false)
 const discordUrl = 'https://discord.com/invite/6Pr9JBCGXy'
 const tiktokUrl = 'https://www.tiktok.com/@arcanepad'
 const instagramUrl = 'https://www.instagram.com/arcanepad/'
+const redditUrl = 'https://www.reddit.com/r/Arcane_pad/'
 const mastodonUrl = 'https://mastodon.social/@Arcanepad'
 const twitterUrl = 'https://twitter.com/arcanepad'
 const youtubeUrl = 'https://www.youtube.com/@Arcanepad'
