@@ -18,16 +18,11 @@
     <div id="downloadCont">
       <div>
         <div class="text-h4" style="margin-top: .5em; font-weight: 1000;">Download</div>
-        <span style="color: rgb(255, 93, 123); font-weight: 800;">
+        <!-- <span style="color: rgb(255, 93, 123); font-weight: 800;">
           Early Access Alpha Test
-        </span>
+        </span> -->
       </div>
-      <div style="display: grid; grid-template-columns:43% 55%; gap:2%; width: 100%;" class="gradientCont">
-        <div class="card">
-          <div class="text-h6">Mobile</div>
-          <q-icon style="margin: auto;" name="smartphone" size="xl" color="white" />
-          <q-btn style="color: cyan;" outline @click="tryDownload(androidDownloadUrl, '.apk')">Android</q-btn>
-        </div>
+      <div style="display: grid; grid-template-columns:60% 40%; gap:2%; width: 100%;" class="gradientCont">
         <div class="card">
           <div class="text-h6">Desktop</div>
           <q-icon style="margin: auto;" name="laptop" size="xl" color="white" />
@@ -35,6 +30,11 @@
             <q-btn style="color: cyan;" outline @click="tryDownload(windowsDownloadUrl, '.exe')">Windows</q-btn>
             <q-btn style="color: cyan;" outline @click="tryDownload(linuxDownloadUrl, '.appimage')">Linux</q-btn>
           </div>
+        </div>
+        <div class="card">
+          <div class="text-h6">Mobile</div>
+          <q-icon style="margin: auto;" name="smartphone" size="xl" color="white" />
+          <q-btn style="color: cyan;" outline @click="tryDownload(androidDownloadUrl, '.apk')">Android</q-btn>
         </div>
       </div>
       <hr style="border: 1px solid gray; width: 100%;">

@@ -1,6 +1,6 @@
 <template>
   <div id="mainNav" class="fadeInAndEaseIn">
-    <div style="font-weight: 1000; font-size: 1.2rem; color: cyan;">
+    <div style="font-weight: 1000; font-size: 1.2rem; color: white;">
       Arcanepad
     </div>
     <div class="row q-gutter-sm" style="margin-left: auto;">
