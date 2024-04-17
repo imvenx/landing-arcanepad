@@ -42,7 +42,7 @@
 
   <q-btn class="hideOnPortrait fadeInAndEaseIn" :icon="'arrow_downward'" @click="scrollBottom()" size="lg"
     :style="`display: ${scrollPosition > 50 ? 'none' : 'block'}`"
-    style="margin: auto; width: 100%; position: fixed; bottom: 0; color:cyan"> Video</q-btn>
+    style="margin: auto; width: 100%; position: fixed; bottom: 0; color:cyan; font-weight: 600;">Video</q-btn>
 
 
   <!-- </q-page-container>
