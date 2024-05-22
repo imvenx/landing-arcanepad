@@ -17,7 +17,7 @@
     </div>
     <div id="downloadCont">
       <div>
-        <div class="text-h4" style="margin-top: .5em; font-weight: 1000;">Download</div>
+        <div class="text-h4" style="margin-top: .5em; font-weight: 1000;">Download & Play</div>
         <!-- <span style="color: rgb(255, 93, 123); font-weight: 800;">
           Early Access Alpha Test
         </span> -->
