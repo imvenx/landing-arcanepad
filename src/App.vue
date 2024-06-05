@@ -11,6 +11,9 @@
 </template>
 
 <script setup lang="ts">
+import axios from 'axios';
+import { onMounted } from 'vue';
+import { aConfig } from './config';
 
 // onMounted(() => {
 //   const lines = Array.from(document.getElementsByTagName('line')) as SVGLineElement[];
@@ -28,6 +31,26 @@
 //   });
 // })
 
+
+const registerVisit = async () => {
+  try {
+    const referer = document.referrer
+    const deviceType = navigator.userAgent 
+
+    const response = await axios.post(`${aConfig.arcaneApiBaseUrl}/landing/register-visit`, {
+      referer,
+      deviceType,
+    })
+
+    console.log('Visit registered:', response.data)
+  } catch (error) {
+    console.error('Error registering visit:', error)
+  }
+};
+
+onMounted(async () => {
+  await registerVisit();
+});
 </script>
 
 <style scoped>
