@@ -34,17 +34,36 @@ import { aConfig } from './config';
 
 const registerVisit = async () => {
   try {
+    console.log(import.meta.env.VITE_APP_CLIENT_ID)
+    const tokenResponse = await axios.post(`${aConfig.ssoBaseUrl}/realms/arcanepad-realm/protocol/openid-connect/token`, new URLSearchParams({
+      client_id: import.meta.env.VITE_APP_CLIENT_ID,
+      client_secret: import.meta.env.VITE_APP_CLIENT_SECRET,
+      grant_type: 'client_credentials',
+    }), {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    });
+
+    const accessToken = tokenResponse.data.access_token;
+    
     const referer = document.referrer
     const deviceType = navigator.userAgent 
 
     const response = await axios.post(`${aConfig.arcaneApiBaseUrl}/landing/register-visit`, {
       referer,
       deviceType,
+    },{
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
     })
 
-    console.log('Visit registered:', response.data)
+    // console.log('Visit registered:', response.data)
+    console.log('Visit registered')
   } catch (error) {
-    console.error('Error registering visit:', error)
+    // console.error('Error registering visit:', error)
+    console.error('Error registering visit')
   }
 };
 
