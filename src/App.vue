@@ -34,7 +34,6 @@ import { aConfig } from './config';
 
 const registerVisit = async () => {
   try {
-    console.log(import.meta.env.VITE_APP_CLIENT_ID)
     const tokenResponse = await axios.post(`${aConfig.ssoBaseUrl}/realms/arcanepad-realm/protocol/openid-connect/token`, new URLSearchParams({
       client_id: import.meta.env.VITE_APP_CLIENT_ID,
       client_secret: import.meta.env.VITE_APP_CLIENT_SECRET,
