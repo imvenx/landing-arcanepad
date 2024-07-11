@@ -34,6 +34,11 @@ import { aConfig } from './config';
 
 const registerVisit = async () => {
   try {
+    const referer = document.referrer
+
+    // this is likely a web crawler so we are not interested
+    if (referer === 'https://imvenx.github.io/' || isCrawler(navigator.userAgent)) return
+
     const tokenResponse = await axios.post(`${aConfig.ssoBaseUrl}/realms/arcanepad-realm/protocol/openid-connect/token`, new URLSearchParams({
       client_id: import.meta.env.VITE_APP_CLIENT_ID,
       client_secret: import.meta.env.VITE_APP_CLIENT_SECRET,
@@ -45,14 +50,13 @@ const registerVisit = async () => {
     });
 
     const accessToken = tokenResponse.data.access_token;
-    
-    const referer = document.referrer
-    const deviceType = navigator.userAgent 
+
+    const deviceType = navigator.userAgent
 
     const response = await axios.post(`${aConfig.arcaneApiBaseUrl}/landing/register-visit`, {
       referer,
       deviceType,
-    },{
+    }, {
       headers: {
         Authorization: `Bearer ${accessToken}`
       }
@@ -65,6 +69,13 @@ const registerVisit = async () => {
     console.error('Error registering visit')
   }
 };
+
+function isCrawler(userAgent: string) {
+  const crawlers = [
+    'Googlebot', 'Bingbot', 'Slurp', 'DuckDuckBot', 'Baiduspider', 'YandexBot', 'Sogou'
+  ];
+  return crawlers.some(crawler => userAgent.includes(crawler));
+}
 
 onMounted(async () => {
   await registerVisit();
