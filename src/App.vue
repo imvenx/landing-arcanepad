@@ -65,8 +65,8 @@ const registerVisit = async () => {
     // console.log('Visit registered:', response.data)
     console.log('Visit registered')
   } catch (error) {
-    // console.error('Error registering visit:', error)
-    console.error('Error registering visit')
+    console.error('Error registering visit:', error)
+    // console.error('Error registering visit')
   }
 };
 
