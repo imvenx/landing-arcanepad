@@ -35,9 +35,10 @@ import { aConfig } from './config';
 const registerVisit = async () => {
   try {
     const referer = document.referrer
+    const deviceType = navigator.userAgent
 
     // this is likely a web crawler so we are not interested
-    if (referer === 'https://imvenx.github.io/' || isCrawler(navigator.userAgent)) return
+    // if (referer === 'https://imvenx.github.io/' || isCrawler(deviceType)) return
 
     const tokenResponse = await axios.post(`${aConfig.ssoBaseUrl}/realms/arcanepad-realm/protocol/openid-connect/token`, new URLSearchParams({
       client_id: import.meta.env.VITE_APP_CLIENT_ID,
@@ -50,9 +51,6 @@ const registerVisit = async () => {
     });
 
     const accessToken = tokenResponse.data.access_token;
-
-    const deviceType = navigator.userAgent
-
     const response = await axios.post(`${aConfig.arcaneApiBaseUrl}/landing/register-visit`, {
       referer,
       deviceType,
@@ -63,9 +61,13 @@ const registerVisit = async () => {
     })
 
     // console.log('Visit registered:', response.data)
-    console.log('Visit registered')
-  } catch (error) {
-    console.error('Error registering visit:', error)
+    if (response.status === 204) {
+      console.log('Visit registered')
+    } else {
+      console.log('register visit unsuccessfull')
+    }
+  } catch (e) {
+    console.error('Error registering visit:', e)
     // console.error('Error registering visit')
   }
 };
