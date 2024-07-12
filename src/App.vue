@@ -62,12 +62,12 @@ const registerVisit = async () => {
 
     // console.log('Visit registered:', response.data)
     if (response.status === 204) {
-      console.log('Visit registered')
+      // console.log('Visit registered')
     } else {
-      console.log('register visit unsuccessfull')
+      // console.log('register visit unsuccessfull')
     }
   } catch (e) {
-    console.error('Error registering visit:', e)
+    // console.error('Error registering visit:', e)
     // console.error('Error registering visit')
   }
 };
