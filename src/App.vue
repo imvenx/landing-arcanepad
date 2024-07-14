@@ -38,7 +38,7 @@ const registerVisit = async () => {
     const deviceType = navigator.userAgent
 
     // this is likely a web crawler so we are not interested
-    // if (referer === 'https://imvenx.github.io/' || isCrawler(deviceType)) return
+    if (referer === 'https://imvenx.github.io/' || isCrawler(deviceType)) return
 
     const tokenResponse = await axios.post(`${aConfig.ssoBaseUrl}/realms/arcanepad-realm/protocol/openid-connect/token`, new URLSearchParams({
       client_id: import.meta.env.VITE_APP_CLIENT_ID,
