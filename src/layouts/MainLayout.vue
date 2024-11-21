@@ -1,5 +1,5 @@
 <template>
-  <div id="mainNav" class="fadeInAndEaseIn">
+  <!-- <div id="mainNav" class="fadeInAndEaseIn">
     <div style="font-weight: 1000; font-size: 1.2rem; color: white;">
       Arcanepad
     </div>
@@ -15,7 +15,8 @@
       <q-btn icon="fab fa-tiktok" flat round color="deep-purple-9" outline class="col"
         @click="openUrlInNewTab(tiktokUrl)" />
     </div>
-  </div>
+  </div> -->
+
   <!-- <q-layout view="lHh Lpr lFf">
     <q-header elevated style="background: linear-gradient(120deg, rgb(0, 20, 20, .9), rgb(20, 0, 20, .9)); ">
       <q-toolbar>
@@ -36,17 +37,18 @@
     </q-drawer> -->
 
   <!-- <q-page-container> -->
-  <div style="padding-top: 3rem;" class="fadeInAndEaseIn">
-    <router-view />
+  <!-- <div style="padding-top: 3rem;" class="fadeInAndEaseIn">
   </div>
-
+  
   <q-btn class="hideOnPortrait fadeInAndEaseIn" :icon="'arrow_downward'" @click="scrollBottom()" size="lg"
-    :style="`display: ${scrollPosition > 50 ? 'none' : 'block'}`"
-    style="margin: auto; width: 100%; position: fixed; bottom: 0; color:cyan; font-weight: 600;">Video</q-btn>
+  :style="`display: ${scrollPosition > 50 ? 'none' : 'block'}`"
+  style="margin: auto; width: 100%; position: fixed; bottom: 0; color:cyan; font-weight: 600;">Video</q-btn> -->
 
 
   <!-- </q-page-container>
   </q-layout> -->
+
+  <router-view />
 </template>
 
 <script setup lang="ts">
